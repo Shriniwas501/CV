@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shriniwas Dixit – Solutions Architect CV (HTML)</title>
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0f172a; --muted:#475569; --accent:#0ea5e9; --line:#e2e8f0;
+      --card:#f8fafc; --chip:#eef2ff;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1020; --fg:#e5e7eb; --muted:#94a3b8; --accent:#38bdf8; --line:#1f2937; --card:#111827; --chip:#0b1324; }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 "Segoe UI", Calibri, system-ui, -apple-system, Arial, sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Layout */
+    .page{max-width:1000px;margin:32px auto;padding:0 20px}
+    header{display:flex;gap:24px;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .title h1{font-size:34px;line-height:1.2;margin:0}
+    .title .role{color:var(--muted);font-weight:600;margin-top:4px}
+    .contact{display:flex;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:14px}
+
+    .toolbar{display:flex;gap:10px;justify-content:flex-end;margin:12px 0 20px}
+    .btn{border:1px solid var(--line);background:var(--card);padding:6px 10px;border-radius:10px;font-size:12px;color:var(--fg);cursor:pointer}
+    .btn:hover{border-color:var(--accent)}
+
+    .grid{display:grid;grid-template-columns:280px 1fr;gap:20px}
+    .section{margin-bottom:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+    h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;color:var(--muted)}
+    h3{margin:0 0 6px;font-size:16px}
+    .muted{color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{border:1px solid var(--line);background:var(--chip);padding:4px 8px;border-radius:10px;font-size:12px}
+    ul{margin:6px 0 0 18px}
+    li{margin:4px 0}
+
+    .xp-item{padding:12px;border-left:3px solid var(--line);margin-bottom:12px}
+    .xp-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--muted)}
+
+    /* Compact toggle (one-column) */
+    .compact .grid{grid-template-columns:1fr}
+    .compact .sidebar{order:2}
+    .compact .main{order:1}
+
+    /* Print */
+    @media print{
+      .toolbar{display:none}
+      body{background:#fff;color:#000}
+      .page{margin:0;max-width:100%}
+      .card{border:0}
+      a{text-decoration:none;color:#000}
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="page">
+    <header>
+      <div class="title">
+        <h1>Shriniwas Dixit</h1>
+        <div class="role">Solutions Architect</div>
+      </div>
+      <div class="contact">
+        <span>📞 +91-9819489831</span>
+        <span>✉️ <a href="mailto:shriniwas.dixit@gmail.com">shriniwas.dixit@gmail.com</a></span>
+        <span>🔗 <a href="https://linkedin.com/in/shriniwasdixit" target="_blank" rel="noreferrer noopener">linkedin.com/in/shriniwasdixit</a></span>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <button class="btn" onclick="toggleLayout()">Toggle Layout (2-col / 1-col)</button>
+      <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <section class="section card">
+          <h2>Professional Summary</h2>
+          <p>Solutions Architect with 16+ years in cloud, data, and BI across BFSI and enterprise. Expert in AWS &amp; Azure architectures, BI implementations, and enterprise data migrations. Known for scalable, secure, cost-optimized solutions and stakeholder leadership.</p>
+        </section>
+
+        <section class="section card">
+          <h2>Core Skills</h2>
+          <div class="chips">
+            <span class="chip">AWS (SAA)</span>
+            <span class="chip">Azure</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">Azure Data Factory</span>
+            <span class="chip">Databricks</span>
+            <span class="chip">SSIS</span>
+            <span class="chip">SQL Server</span>
+            <span class="chip">Solution Design</span>
+            <span class="chip">Microservices</span>
+            <span class="chip">Serverless</span>
+            <span class="chip">APIs</span>
+            <span class="chip">Python</span>
+            <span class="chip">Git / Bitbucket</span>
+            <span class="chip">JIRA / Confluence</span>
+            <span class="chip">BFSI, Risk &amp; Compliance</span>
+          </div>
+        </section>
+
+        <section class="section card">
+          <h2>Key Achievements</h2>
+          <ul>
+            <li>Cloud cost optimization saving ~US$200K annually.</li>
+            <li>Enterprise BI &amp; regulatory reporting improving compliance by ~30%.</li>
+            <li>Multiple awards for architecture &amp; delivery excellence (Barclays).</li>
+          </ul>
+        </section>
+
+        <section class="section card">
+          <h2>Certifications</h2>
+          <ul>
+            <li>AWS Certified Solutions Architect – Associate</li>
+            <li>Microsoft Certified Solutions Associate: SQL Server</li>
+            <li>Certified Power BI Developer</li>
+          </ul>
+        </section>
+
+        <section class="section card">
+          <h2>Education</h2>
+          <p><strong>B.E. (Computer Engineering)</strong><br/>Pune University</p>
+        </section>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <section class="section card">
+          <h2>Professional Experience</h2>
+
+          <div class="xp-item">
+            <h3>Solution Designer — Barclays India</h3>
+            <div class="xp-meta"><span>May 2021 – Present</span> <span>•</span> <span>Mumbai, India</span></div>
+            <ul>
+              <li>Architect for enterprise remediation portfolio; delivered digital-first <em>Paperless Journey</em> reducing processing time by <strong>~30%</strong>.</li>
+              <li>Designed <em>Enterprise Data Platform (EDP)</em> on AWS replacing multiple regional warehouses; improved scalability, compliance, and analytics velocity.</li>
+              <li>Recognized with Barclays UK <em>Exceptional</em> &amp; <em>Star</em> awards for solution delivery.</li>
+            </ul>
+            <div class="muted">Key Tech: AWS (S3, IAM), SQL Server, MongoDB, REST APIs, GitLab CI/CD</div>
+          </div>
+
+          <div class="xp-item">
+            <h3>Senior Consultant — Capgemini UK &amp; India</h3>
+            <div class="xp-meta"><span>Sep 2016 – May 2021</span></div>
+            <ul>
+              <li>Built <em>Remediation Lifecycle Framework (Remsys)</em> aligning with FCA guidelines for retail banking, cards, loans, and mortgages.</li>
+              <li>Automated processes cutting manual effort by ~40% and lowering operational costs.</li>
+              <li>Led <em>Data Masking CoE</em> to depersonalize production-quality datasets for non-prod, improving compliance posture.</li>
+            </ul>
+            <div class="muted">Key Tech: .NET, SQL Server, Git, QlikView, Informatica, Power BI</div>
+          </div>
+
+          <div class="xp-item">
+            <h3>Team Lead — Persistent Systems (India)</h3>
+            <div class="xp-meta"><span>Apr 2014 – Sep 2016</span></div>
+            <ul>
+              <li>Led BI/SQL teams for US clients as Offsite Coordinator &amp; Scrum Master.</li>
+              <li>Delivered <em>Incentive Calculation Engine</em>: Power BI dashboards, Azure SQL migration, and ETL optimization.</li>
+            </ul>
+            <div class="muted">Key Tech: Power BI, Azure SQL, MSBI/SSIS</div>
+          </div>
+
+          <div class="xp-item">
+            <h3>Software Engineer — SVC Bank (Mumbai)</h3>
+            <div class="xp-meta"><span>Dec 2008 – Mar 2014</span></div>
+            <ul>
+              <li>Contributed to in-house <em>Core Banking Solution (CBS)</em> on .NET &amp; SQL Server.</li>
+              <li>Designed modules for account management, transactions, and reporting; optimized stored procedures and queries.</li>
+            </ul>
+            <div class="muted">Key Tech: .NET, SQL Server</div>
+          </div>
+        </section>
+
+        <section class="section card">
+          <h2>Selected Projects</h2>
+          <div class="xp-item">
+            <h3>Barclays — Paperless Journey</h3>
+            <ul>
+              <li>Migrated remediation letters to digital channels (email/SMS/portal) via workflow-driven services and APIs.</li>
+              <li>Outcome: ~30% faster processing; improved traceability and compliance.
+              </li>
+            </ul>
+          </div>
+          <div class="xp-item">
+            <h3>Barclays — Enterprise Data Platform (AWS)</h3>
+            <ul>
+              <li>Consolidated on‑prem/regional stores into AWS lake + curated marts; standardized ingestion and governance.</li>
+              <li>Outcome: Faster analytics, scalable storage, stronger data controls.</li>
+            </ul>
+          </div>
+          <div class="xp-item">
+            <h3>Capgemini — Customer Remediation Framework</h3>
+            <ul>
+              <li>Workflow-based system improving compliance handling and customer experience.</li>
+              <li>Outcome: Operational cost reduction and higher regulatory adherence.</li>
+            </ul>
+          </div>
+          <div class="xp-item">
+            <h3>Capgemini — Data Masking CoE</h3>
+            <ul>
+              <li>Delivered depersonalized production-quality datasets in non-prod to satisfy data privacy laws.</li>
+              <li>Outcome: Reduced risk exposure; 40% lower cost than off‑the‑shelf alternatives.</li>
+            </ul>
+          </div>
+          <div class="xp-item">
+            <h3>Microsoft (via Persistent) — Incentive Calculation Engine</h3>
+            <ul>
+              <li>Built Power BI dashboards for Azure service usage; migrated SQL workloads to Azure SQL; optimized ETL pipelines.</li>
+            </ul>
+          </div>
+          <div class="xp-item">
+            <h3>SVC Bank — Core Banking Solution</h3>
+            <ul>
+              <li>Developed account/transaction/reporting modules; ensured smooth transaction processing and performance.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    function toggleLayout(){
+      document.body.classList.toggle('compact');
+    }
+  </script>
+</body>
+</html>
